@@ -49,6 +49,9 @@
                                                         <buttonConfiguration key="configuration" style="plain" title="Forgot Username?">
                                                             <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
                                                         </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="forgotUsernameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zem-48-lpl"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YNF-NH-dwx">
                                                         <rect key="frame" x="130" y="0.0" width="130" height="45.666666666666664"/>
@@ -56,6 +59,10 @@
                                                         <buttonConfiguration key="configuration" style="plain" title="Forgot Password?">
                                                             <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
                                                         </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="forgotPasswordButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4X3-yX-e4Y"/>
+                                                            <action selector="forgotUsernameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WwE-Cg-vW3"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -69,7 +76,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                         <constraints>
                             <constraint firstItem="6Uu-Ny-RAc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2qG-bR-Cfc"/>
                             <constraint firstItem="6Uu-Ny-RAc" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="dKk-xF-XeJ"/>
@@ -77,7 +84,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="Log In" largeTitleDisplayMode="always" id="b53-00-6Lc"/>
                     <connections>
+                        <outlet property="forgotPassword" destination="YNF-NH-dwx" id="gJw-B4-gk5"/>
+                        <outlet property="forgotUsername" destination="cUE-FE-N0z" id="ZJs-gV-iq7"/>
                         <outlet property="usernameTextField" destination="0zz-HS-9l5" id="23d-dd-UzE"/>
+                        <segue destination="wEZ-Rb-D45" kind="show" identifier="forgottenUsernameOrPassword" id="LNC-Fu-qWs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -92,7 +102,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="7QY-da-mqt"/>
-                        <color key="backgroundColor" systemColor="secondaryLabelColor"/>
+                        <color key="backgroundColor" systemColor="systemGrayColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="OlF-qV-6ud"/>
                 </viewController>
@@ -119,12 +129,15 @@
             <point key="canvasLocation" x="239" y="4"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="LNC-Fu-qWs"/>
+    </inferredMetricsTieBreakers>
     <resources>
-        <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
